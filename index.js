@@ -1,18 +1,18 @@
-function map(src, cb) {
+function map(arr, cb) {
   let r = []
 
-  for (let i = 0; i < src.length; i++) {
-    let e = src[i]
+  for (let i = 0; i < arr.length; i++) {
+    let e = arr[i]
     r.push(cb(e))
   }
 
   return r;
 }
 
-function reduce(src, cb, starting){
+function reduce(arr, cb, starting){
   let r = (!!starting) ? starting : src[0]
-  for (let i = (!!starting) ? 0 : 1; i < src.length; i++) {
-    r = cb(src[i], r)
+  for (let i = (!!starting) ? 0 : 1; i < arr.length; i++) {
+    r = cb(arr[i], r)
   }
 
   return r;
