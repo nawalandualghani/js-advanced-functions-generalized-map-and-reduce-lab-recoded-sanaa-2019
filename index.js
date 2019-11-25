@@ -10,7 +10,7 @@ function map(arr,ab){
 }
 
 function reduce(arr,ab){
-  let r =arr[0];
+  let r =(!!starting) ? starting : arr[0];
 
   for(let i=0;i<arr.length ; i++){
     r=ab(arr[i],r);
