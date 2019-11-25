@@ -11,8 +11,6 @@ function map(src, cb) {
 
 function reduce(src, cb, starting){
   let r = (!!starting) ? starting : src[0]
-
-
   for (let i = (!!starting) ? 0 : 1; i < src.length; i++) {
     r = cb(src[i], r)
   }
