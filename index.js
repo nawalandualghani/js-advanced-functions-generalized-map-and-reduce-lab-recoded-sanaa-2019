@@ -6,4 +6,5 @@ function map(arr,ab){
     let arrays=arr[i];
     r.push(ab(arrays));
   }
+  return r;
 }
