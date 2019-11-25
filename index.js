@@ -1,19 +1,21 @@
-// Add your functions here
+function map(src, cb) {
+  let r = []
 
-function map(arr,ab){
-  let r=[];
-  for(let i=0 ; i<r.length ; i++){
-    let arrays=arr[i];
-    r.push(ab(arrays));
+  for (let i = 0; i < src.length; i++) {
+    let theElement = src[i]
+    r.push(cb(theElement))
   }
+
   return r;
 }
 
-function reduce(arr,ab){
-  let r =(!!starting) ? starting : arr[0];
+function reduce(src, cb, starting){
+  let r = (!!starting) ? starting : src[0]
+  let i = (!!starting) ? 0 : 1
 
-  for(let i=(!!starting) ? 0 : 1;i<arr.length ; i++){
-    r=ab(arr[i],r);
+  for (; i < src.length; i++) {
+    r = cb(src[i], r)
   }
+
   return r;
 }
